@@ -83,6 +83,10 @@ describe('validator module', () => {
       expect(castToBoolean(true)).toBeTruthy();
       expect(castToBoolean(1)).toBeTruthy();
       expect(castToBoolean('1')).toBeTruthy();
+      expect(castToBoolean([1])).toBeTruthy();
+      expect(castToBoolean(-2)).toBeTruthy();
+      expect(castToBoolean(() => {})).toBeTruthy();
+      expect(castToBoolean(isNumber(2))).toBeTruthy();
     });
   
     it('throws if value is not castable to number', () => {
